@@ -3,7 +3,6 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
-
 /* Basic */
 
 	#skel-layers-wrapper {
@@ -27,7 +26,7 @@
 /* Layers */
 
 	#titleBar {
-		background: #00695F;
+		background: #00695F url("/index.html");
 		height: 44px;
 		line-height: 44px;
 	}
@@ -39,7 +38,6 @@
 			text-align: center;
 			font-size: 1.2em;
 			color: #fff;
-			z-index: 1;
 		}
 
 		#titleBar .toggle {
@@ -62,6 +60,7 @@
 			}
 
 			#titleBar .toggle:before {
+			font-family: 'FontAwesome', 'sans-serif';
 				background: none;
 				color: white;
 				display: block;
@@ -85,8 +84,8 @@
 	#navPanel {
 		background: #222833;
 	}
-
-		#navPanel .link {
+	
+	#navPanel .link {
 			border-top: solid 1px rgba(192, 192, 192, 0.15);
 			color: #ccc;
 			display: block;
@@ -104,31 +103,31 @@
 				color: #fff;
 			}
 
-			#navPanel .link .indent-1 {
+/*			#navPanel .link .indent-1 {
 				display: inline-block;
 				width: 1em;
-			}
+			}*/
 
-			#navPanel .link .indent-2 {
+/*			#navPanel .link .indent-2 {
 				display: inline-block;
 				width: 2em;
-			}
+			}*/
 
-			#navPanel .link .indent-3 {
+/*			#navPanel .link .indent-3 {
 				display: inline-block;
 				width: 3em;
-			}
+			}*/
 
-			#navPanel .link .indent-4 {
+/*			#navPanel .link .indent-4 {
 				display: inline-block;
 				width: 4em;
-			}
+			}*/
 
-			#navPanel .link .indent-5 {
+/*			#navPanel .link .indent-5 {
 				display: inline-block;
 				width: 5em;
-			}
-
+			}*/
+	
 /* Wrapper */
 
 	.wrapper.style2 {
@@ -158,8 +157,8 @@
 		display: none;
 	}
 
-	.homepage #header {
-		padding: 3em 0 4em 0;
+	.homepage #header {		
+		display: none; /* padding: 3em 0 4em 0;  pati linha verde em baixo do homepage title no celular.*/
 	}
 
 	#logo {
