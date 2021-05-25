@@ -227,7 +227,7 @@
 
                 <section class="r-hstack justify-center">
                 	<h1 style="font-size:70px;"> Model Prediction & Unknown Parameters</h1>
-                	<h2 style="font-size:30px;"> Initial conditions </h2>
+                	<h2 style="font-size:30px;"> 274 agents + Initial conditions + <s style="color:lightgrey">speed + exit gate</s> </h2>
               		<ul style="font-size: 20px;">
 						<li> Speed from \(\mathcal{N}(1.6\hbox{~m/s},(0.6\hbox{~m/s})^2)\)</li>
 						<li> Exit Gate from  
@@ -250,10 +250,10 @@
                 	<h1 style="font-size:70px;"> Particle Filter</h1>
                 	<h2 style="font-size:30px;"> Sequential Importance Resampling </h2>
               		<ul style="font-size: 20px;">
-						<li> One agent per simulation, 100 particles</li>
-						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3 
+						<li> One agent per simulation, 100 particles, data assimilation window of 25 frames.</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
 						<li> 274 pedestrians </li>
-						</ul>
+					</ul>
               		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
 					<div>
 						<p> </p>
@@ -269,7 +269,127 @@
                 	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
                 	
  					<div><img src="images/density-model/CCPF-Flowchart.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical Noise Step</h1>
+                	<h2 style="font-size:30px;"> try to perturb the categorical unknown parameters </h2>
+                	</br></br>
+                	<div>
+					<ol style="font-size: 20px;">
+						<li> the agent \(i\) has a <span style="background-color:lightgrey">probability \( P_c \)</span> of having its categorical parameter \(j\) redefined 
+							<ul><li>Redrawn probability: \( P_c \)</li></ul></br>
+						</li>
+						<li> the categorical parameter \(j\) is redefined according a <span style="background-color:lightgrey">transition matrix \(T_j\)</span> </li></br>
+						<li> each categorical parameter has a specific transition matrix </li></br>
+						<li> the categorical noise step must be applied to all \(n\times N\) agents after the update step every <span style="background-color:lightgrey">\(W_c = \tau\times W_d\) </span> time steps. 
+							<ul><li>Redrawn window: \(W_c\)</li>
+								<li>Data assimilation window: \(W_d\)</li></ul>
+						</li>
+					</ol>
 					</div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Transition Matrix</h1>
+                	<h2 style="font-size:30px;"> StationSim + Grand Central Terminal</h2>
+<p style="font-size:20px"> $$p(\text{ID}'~|~\text{ID}) = \left\{ \begin{array}{ccl}
+0.4  & \text{for} & \text{ID}' = \text{ID}, \\ 
+0.25 & \text{for} & \text{ID}' = \text{ID} \pm 1, \\ 
+0.05 & \text{for} & \text{ID}' = \text{ID} \pm 2, \\
+\end{array}\right.$$ </p> </br>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<div style="font-size:20px;"><img src="images/density-model/02-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo">
+						</div>
+					</div>
+					<div style="font-size:20px;">
+						
+<p></p><span style="font-size:14px;">
+$$T = \left[ \begin{array}{ccccccccccc}
+0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25\\
+0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05\\
+0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05\\
+0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25\\
+0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4\\
+\end{array}\right]$$</span>
+
+
+					</div>
+                </section>
+				<section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
+                	<!--<h2 style="font-size:30px;"> Sequential Importance Resampling </h2>-->
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, DA window of 25 frames, Redrawn window of 100 frames.</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
+					</ul>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<p> </p>
+						<div><img src="images/density-model/results/4a.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+						<div><img src="images/density-model/results/4b.png" style="margin: 2 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+				<section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, DA window of 25 frames</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
+						<li> 274 pedestrians, 5 runs, 11 redrawn probabilities, 5 redrawn windows;</li>
+					</ul></br></br>
+
+					<img src="images/density-model/results/5a.png" style="background:transparent;width:auto">
+					<!--<img src="images/density-model/results/5b.png" style="background:transparent;width:60%">-->
+
+                </section>
+
+				<section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;">CCPF versus SIR-PF</h1>
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, DA window of 25 frames</li>
+					</ul></br>
+					<img src="images/density-model/results/6.png" style="background:transparent;height:500px">
+					<!--<img src="images/density-model/results/5b.png" style="background:transparent;width:60%">-->
+
+                </section>
+
+<section data-background-image="images/rafael-leao-YJ4hqRchpWE-unsplash.jpg">
+                    <div style="background-color:rgba(255,255,255,0.8);border-radius: 25px;padding:15px;">
+
+                        <h1 style="text-align:center;font-size:25px">Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling</h1>
+
+                        <h6 style="color:black;">Applications to real pedestrian traces and gate selection problems with Particle Filters</h6>
+                        <hr/>
+                        <h2 style="font-size: 35px;">Patricia Ternes and Nick Malleson</h2>
+                        <hr/>
+                        <p style="text-align:center;font-size:25px">Slides available at: 
+                        	<br/><a href="https://urban-analytics.github.io/dust/presentations.html">https://urban-analytics.github.io/dust/presentations.html</a>
+                        	<br/><a href="https://patricia-ternes.github.io/presentations.html">https://patricia-ternes.github.io/presentations.html</a>
+                        </p>
+
+                        <a href="https://europa.eu/european-union/index_en">
+                            <img style="float:left;padding:10px 50px 10px 50px;width:70px; height:auto;" src="images/LOGO_EU.jpg"/>
+                        </a>
+
+                        <a href="http://www.leeds.ac.uk/">
+                            <img style="float:center;padding:10px;width:150px; height:auto;" src="images/uol_logo.gif"/>
+                        </a>
+
+                        <a href="http://www.turing.ac.uk/">
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="images/LOGO_TURING.png"/>
+                        </a>
+                    </div>
                 </section>
 
 			</div>
