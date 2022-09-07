@@ -1,44 +1,24 @@
 - name: GitHub
-  url: http://github.com/phlow
-  class: icon-github
-  title: Code und mehr...
+  url: http://github.com/patricia-ternes
+  class: fab fa-github-alt
+  title: GitHub
 
-- name: YouTube
-  url: http://www.youtube.com/PhlowMedia
-  class: icon-youtube
-  title: "Videos, Video-Anleitungen und Filme von Phlow auf YouTube"
+- name: LinkedIn
+  url: https://www.linkedin.com/in/patricia-ternes/
+  class: fab fa-linkedin-in
+  title: "LinkedIn"
 
-- name: Twitter
-  url: http://twitter.com/phlow
-  class: icon-twitter
-  title: "Immer das Neuste von Phlow gibt es auf Twitter"
+- name: ORCID
+  url: https://orcid.org/0000-0002-3116-3692
+  class: fab fa-orcid
+  title: "ORCID"
 
-- name: Mixcloud
-  url: http://www.mixcloud.com/phlow/
-  class: icon-cloud
-  title: "Mixe, was sonst?"
+- name: Lattes
+  url: http://lattes.cnpq.br/9063755717694210
+  class: ai ai-lattes
+  title: "Lattes"
 
-# - name: Facebook
-#   url: http://www.facebook.com/
-#   class: icon-facebook
-#   title: ""
-
-# - name: Soundcloud
-#   url: http://soundcloud.com/
-#   class: icon-soundcloud
-#   title: ""
-
-# - name: Instagram
-#   url: http://instagram.com/
-#   class: icon-instagram
-#   title: ""
-
-# - name: Pinterest
-#   url: http://www.pinterest.com/
-#   class: icon-pinterest
-#   title: ""
-
-# - name: Xing
-#   url: https://www.xing.com/profile/
-#   class: icon-xing
-#   title: Xing Profil
+- name: ResearchGate
+  url: https://www.researchgate.net/profile/Patricia_Ternes
+  class: fab fa-researchgate
+  title: "ResearchGate"
