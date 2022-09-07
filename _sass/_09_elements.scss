@@ -160,3 +160,44 @@ img.lazy {
     margin-top: -50px;
   }
 }
+
+/*
+  * 	Patricia Ternes additional elements  * 
+*/
+
+
+/* Small up-to-top button */
+#up-to-button {
+  padding: 5px 0 10px 0;
+}
+
+#up-to-button a {
+  font-size: $rem-base;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#up-to-button a:hover {
+  background: $grey-2;
+  border-bottom: none;
+}
+
+/* Publication list style */
+.publication {
+  margin-left: 50px
+}
+
+.publication li {
+  padding-left: 1.3em;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.publication li:before {
+  content: "\f02d";  /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  color: $ci-1;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
