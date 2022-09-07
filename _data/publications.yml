@@ -1,0 +1,113 @@
+# This page is used to automatically generate the publication list in the file pages/publications.md
+# Please include newest items on the top.
+#
+# Supported classes are:
+#   "peer-reviewed": Peer-Reviewed Journal Articles
+#   "under-review": Under Review
+#   "thesis": PhD Thesis
+#   "dissertation": Master Dissertation
+#   "accepted": Accepted for Publication
+# Classes to be included in future:
+#   "book", "other"
+######################################
+
+- class: "accepted"
+  authors: "Malleson, N., M. Birkin, D. Birks, J. Ge, A. Heppenstall, E. Manley, J. McCulloch, <b>P. Ternes</b>"
+  year: "2022"
+  title: "Agent-based modelling for urban analytics: state of the art and challenges"
+  journal: "AI Communications"
+  doi: "https://www.aicommunications.eu/"
+
+- class: "peer-reviewed"
+  authors: "<b>Ternes, P.</b>, J. Ward, A. Heppenstall, V. Kumar, L.‐M. Kieu, and N. Malleson"
+  year: "2021"
+  title: "Data Assimilation and Agent‐Based Modelling: Towards the Incorporation of Categorical Agent Parameters"
+  journal: "Open Research Europe"
+  doi: "https://doi.org/10.12688/openreseurope.14144.2"
+
+- class: "peer-reviewed"
+  authors: "Clay, R., J. A. Ward, <b>P. Ternes</b>, L.‐M. Kieu, and N. Malleson"
+  year: "2021"
+  title: "Real‐time agent‐based crowd simulation with the Reversible Jump Unscented Kalman Filter"
+  journal: "Simulation Modelling Practice and Theory"
+  volume: "113"
+  pages: "102386"
+  doi: "https://doi.org/10.1016/j.simpat.2021.102386"
+
+
+- class: "peer-reviewed" 
+  authors: "Mendonça, B. H. S., <b>P. Ternes</b>, E. Salcedo, A. B. de Oliveira, and M. C. Barbosa"
+  year: "2020"
+  title: "Water diffusion in carbon nanotubes: Interplay between confinement, surface deformation, and temperature"
+  journal: "The Journal of Chemical Physics"
+  volume: "153"
+  number: "24"
+  pages: "244504"
+  doi: "https://doi.org/10.1063/5.0031084"
+
+- class: "peer-reviewed" 
+  authors: "Mendonça, B. H. S., <b>P. Ternes</b>, E. Salcedo, A. B. de Oliveira, and M. C. Barbosa"
+  year: "2020"
+  title: "Water diffusion in rough carbon nanotubes"
+  journal: "The Journal of Chemical Physics"
+  volume: "152"
+  number: "2"
+  pages: "024708"
+  doi: "https://doi.org/10.1063/1.5129394"
+
+- class: "peer-reviewed" 
+  authors: "Fonseca, T. O., M. M. Szortyka, <b>P. Ternes</b>, C. Gavazzoni, A. B. de Oliveira, and M. C. Barbosa"
+  year: "2019"
+  title: "Dewetting in associating lattice gas model confined by hydrophobic walls"
+  journal: "Science China Physics, Mechanics & Astronomy"
+  volume: "62"
+  number: "10"
+  pages: "107009"
+  doi: "https://doi.org/10.1007/s11433-019-9416-3"
+
+- class: "peer-reviewed" 
+  authors: "<b>Ternes, P.</b>, E. Salcedo, and M. C. Barbosa"
+  year: "2018"
+  title: "Relation between boundary slip mechanisms and waterlike fluid behavior"
+  journal: "Physical Review E"
+  volume: "97"
+  number: "3"
+  pages: "033104"
+  doi: "https://doi.org/10.1103/PhysRevE.97.033104"
+
+- class: "peer-reviewed" 
+  authors: "<b>Ternes, P.</b>, A. M.-Coto, and E. Salcedo"
+  year: "2017"
+  title: "Single-file mobility of water-like fluid in a generalized Frenkel-Kontorova model"
+  journal: "The Journal of Chemical Physics"
+  volume: "147"
+  number: "3"
+  pages: "034510"
+  doi: "https://doi.org/10.1063/1.4995448"
+
+- class: "peer-reviewed" 
+  authors: "Fonseca, T. O., <b>P. Ternes</b>, A. B. de Oliveira, and M. C. Barbosa"
+  year: "2017"
+  title: "Freezing Suppression in Conﬁned Water"
+  journal: "Physicae Organum"
+  volume: "3"
+  number: "2"
+  pages: "128-137"
+  doi: "https://periodicos.unb.br/index.php/physicae/article/view/13367"
+ 
+- class: "thesis"
+  authors: "<b>Ternes, P.</b>"
+  year: "2018"
+  title: "Flow of a nanoconfined water-like fluid"
+  institution: "Institute of Physics, Federal University of Rio Grande do Sul"
+  address: "Porto Alegre, Brazil"
+  doi: "https://www.lume.ufrgs.br/handle/10183/179740"
+  
+
+- class: "dissertation"
+  authors: "<b>Ternes, P.</b>"
+  year: "2014"
+  title: "Analisys of the water single-file state in SWNTs with a Frenkel-Kontorova model"
+  institution: "Federal University of Santa Catarina"
+  address: "Florianópolis, Brazil"
+  doi: "https://repositorio.ufsc.br/handle/123456789/129137"
