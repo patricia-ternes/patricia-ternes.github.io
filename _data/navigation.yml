@@ -6,6 +6,10 @@
   url: "/publication/"
   side: left
 
+- title: Presentations
+  url: "/presentations/"
+  side: left
+
 # - title: Blog
 #   url: "/blog/"
 #   side: left

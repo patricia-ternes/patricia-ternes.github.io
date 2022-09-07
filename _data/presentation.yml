@@ -1,0 +1,118 @@
+# Possible class:
+#   - presentation
+#   - poster
+#   - talk
+#   - interview
+
+- class: "presentation"
+  title: "Applications to real pedestrian traces and gate selection problems with Particle Filters"
+  material: "https://patricia-ternes.github.io/Documents/Presentations/2021-05-26-RADDISH_workshop.html"
+  authors: "<b>Patricia Ternes</b> and Nick Malleson"
+  event: "Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling Workshop"
+  date: "26th May 2021"
+  local: "UK"
+  url: "#"
+
+- class: "presentation"
+  title: "Slip boundary conditions and the behaviour of nanoconfined water"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Marcia Barbosa"
+  event: "VIII Workshop in Complexity of Water, Other Liquids and Science Education"
+  date: "11 and 12, December 2017"
+  local: "Brazil"
+  url: "#"
+
+- class: "presentation"
+  title: "Flow of a nanoconfined water‐like liquid"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Marcia Barbosa"
+  event: "VII Workshop in Complexity of Water, Other Liquids and Science Education"
+  date: "25 and 26, November 2016"
+  local: "Brazil"
+  url: "#"
+
+- class: "presentation"
+  title: "Slip mechanism for a water‐like liquid"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Marcia Barbosa"
+  event: VI Workshop in Complexity of Water and Other Liquids
+  date: "20 and 21, November 2015"
+  local: "Brazil"
+  url: "#"
+
+- class: "presentation"
+  title: "Mobility of waterlike fluid with a confining potential"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Evy Salcedo Torres"
+  event: V Workshop in Complexity of Water and Other Liquids, 
+  date: "14 and 15, November 2014"
+  local: "Brazil"
+  url: "#"
+
+- class: "poster"
+  title: "Single-file mobility of water-like fluid"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Evy Salcedo Torres"
+  event: Chemistry and Physics of Liquids - Gordon Research Seminar (GRS), 
+  date: "August 5-6, 2017"
+  local: "Holderness, NH, US"
+  url: "#"
+
+- class: "poster"
+  title: "Single-file mobility of water-like fluid in SWNT"
+  material: "#"
+  authors: "<b>Patricia Ternes</b>"
+  event: Brazilian Conference of Women in Physics, 
+  date: "November 27-29, 2015"
+  local: "Rio de Janeiro, Brazil"
+  url: "#"
+
+- class: "talk"
+  title: "Single‐file mobility of waterlike fluid in a generalized Frenkel‐Kontorova model"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Evy Salcedo Torres"
+  event: Complex Systems Seminars
+  date: "3rd May 2017"
+  local: "Brazil"
+  url: "#"
+
+- class: "talk"
+  title: "Friction in an effective water‐wall system"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Marcia Barbosa"
+  event: Complex Systems Seminars
+  date: "10th December 2015"
+  local: "Brazil"
+  url: "#"
+
+- class: "talk"
+  title: "Mobility of a water‐like fluid in a generalized model"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Evy Salcedo Torres"
+  event: Complex Systems Seminars
+  date: "15th July 2015"
+  local: "Brazil"
+  url: "#"
+
+- class: "talk"
+  title: "Mobility analysis of a water‐like fluid confined in carbon nanotubes"
+  material: "#"
+  authors: "<b>Patricia Ternes</b> and Evy Salcedo Torres"
+  event: Complex Systems Seminars
+  date: "10th September 2014"
+  local: "Brazil"
+  url: "#"
+
+- class: "interview" 
+  title: "Inside the Turing-LIDA Data Study Group"
+  event: "Consumer Data Research Centre"
+  date: "4th August 2021"
+  local: "UK"
+  url: "#"
+
+- class: "interview" 
+  title: "Brain drain: pandemic accelerates the departure of qualified professionals to work abroad"
+  event: O Globo
+  date: "10th January 2021"
+  local: "Brazil"
+  url: "#"
