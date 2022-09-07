@@ -1,0 +1,13 @@
+# user config files
+*.vscode/*
+*.directory/*
+
+# local built book
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle
+.DS_Store
+.sass-cache
+Gemfile.lock
