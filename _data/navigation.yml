@@ -10,6 +10,10 @@
   url: "/presentations/"
   side: left
 
+- title: Teaching
+  url: "/teaching/"
+  side: left
+
 # - title: Blog
 #   url: "/blog/"
 #   side: left
