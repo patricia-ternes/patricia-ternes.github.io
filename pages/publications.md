@@ -22,15 +22,15 @@ title: "Publications"
 
 <!-- Automatically imports class "peer-reviewed" items from file _data/publications.yml -->
 <ul class="publication">
-  {% for item in site.data.publications %}
-  {% if item.class == "peer-reviewed" %}
+    {% for item in site.data.publications %}
+    {% if item.class == "peer-reviewed" %}
     <li> {{ item.authors }} ({{ item.year }})
-    <a href="{{ item.doi }}">{{ item.title }}</a>.
-    <i>{{ item.journal }}</i>
-    {{ item.volume }}{% if item.number %}({{ item.number }}){% endif %}: {{ item.pages }}.
+        <a href="{{ item.doi }}">{{ item.title }}</a>.
+        <i>{{ item.journal }}</i>
+        {{ item.volume }}{% if item.number %}({{ item.number }}){% endif %}: {{ item.pages }}.
     </li>
-  {% endif %}
-  {% endfor %}
+    {% endif %}
+    {% endfor %}
 </ul>
 {% include _small-top-button.html %}
 
@@ -38,11 +38,11 @@ title: "Publications"
 
 <!-- Automatically imports class "accepted" items from file _data/publications.yml -->
 <ul class="publication">
-  {% for item in site.data.publications %}
+    {% for item in site.data.publications %}
     {% if item.class == "accepted" %}
-      <li> {{ item.authors }} ({{ item.year }}) {{ item.title }}. <i>{{ item.journal }}</i>.</li>
+    <li> {{ item.authors }} ({{ item.year }}) {{ item.title }}. <i>{{ item.journal }}</i>.</li>
     {% endif %}
-  {% endfor %}
+    {% endfor %}
 </ul>
 {% include _small-top-button.html %}
 
@@ -50,14 +50,14 @@ title: "Publications"
 
 <!-- Automatically imports class "under-review" items from file _data/publications.yml -->
 <ul class="publication">
-  {% for item in site.data.publications %}
-  {% if item.class == "under-review" %}
+    {% for item in site.data.publications %}
+    {% if item.class == "under-review" %}
     <li> {{ item.authors }} ({{ item.year }})
-    <a href="{{ item.doi }}">{{ item.title }}</a>.
-    <i>{{ item.journal }}</i>.
+        <a href="{{ item.doi }}">{{ item.title }}</a>.
+        <i>{{ item.journal }}</i>.
     </li>
-  {% endif %}
-  {% endfor %}
+    {% endif %}
+    {% endfor %}
 </ul>
 {% include _small-top-button.html %}
 
@@ -65,14 +65,14 @@ title: "Publications"
 
 <!-- Automatically imports class "thesis" items from file _data/publications.yml -->
 <ul class="publication">
-  {% for item in site.data.publications %}
-  {% if item.class == "thesis" %}
+    {% for item in site.data.publications %}
+    {% if item.class == "thesis" %}
     <li> {{ item.authors }} ({{ item.year }})
-    <a href="{{ item.doi }}">{{ item.title }}</a>.
-    <i>{{ item.institution }}</i>, {{ item.address }}.
+        <a href="{{ item.doi }}">{{ item.title }}</a>.
+        <i>{{ item.institution }}</i>, {{ item.address }}.
     </li>
-  {% endif %}
-  {% endfor %}
+    {% endif %}
+    {% endfor %}
 </ul>
 {% include _small-top-button.html %}
 
@@ -80,12 +80,12 @@ title: "Publications"
 
 <!-- Automatically imports class "dissertation" items from file _data/publications.yml -->
 <ul class="publication">
-  {% for item in site.data.publications %}
-  {% if item.class == "dissertation" %}
+    {% for item in site.data.publications %}
+    {% if item.class == "dissertation" %}
     <li> {{ item.authors }} ({{ item.year }})
-    <a href="{{ item.doi }}">{{ item.title }}</a>.
-    <i>{{ item.institution }}</i>, {{ item.address }}.
+        <a href="{{ item.doi }}">{{ item.title }}</a>.
+        <i>{{ item.institution }}</i>, {{ item.address }}.
     </li>
-  {% endif %}
-  {% endfor %}
+    {% endif %}
+    {% endfor %}
 </ul>
