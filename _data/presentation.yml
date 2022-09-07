@@ -6,7 +6,7 @@
 
 - class: "presentation"
   title: "Applications to real pedestrian traces and gate selection problems with Particle Filters"
-  material: "https://patricia-ternes.github.io/Documents/Presentations/2021-05-26-RADDISH_workshop.html"
+  material: "https://patricia-ternes.github.io/documents/presentations/2021-05-26-RADDISH_workshop.html"
   authors: "<b>Patricia Ternes</b> and Nick Malleson"
   event: "Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling Workshop"
   date: "26th May 2021"

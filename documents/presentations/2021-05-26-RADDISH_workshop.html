@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CCPF RADDISH workshop</title>
+
+		<meta name="description" content="Keynote presentation by Patricia Ternes and Nick Malleson at the Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling Workshop, 26th May 2021.">
+        <meta name="author" content="Patricia Ternes">
+        <meta name="author" content="Nick Malleson">
+        <meta name="keywords" content="ABM, data assimilation, city simulation">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="reveal/dist/reset.css">
+		<link rel="stylesheet" href="reveal/dist/reveal.css">
+		<link rel="stylesheet" href="reveal/dist/theme/solarized.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/plugin/highlight/monokai.css">
+
+		<!-- To automatically render math -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="index" data-background-image="images/rafael-leao-YJ4hqRchpWE-unsplash.jpg">
+                    <div style="background-color:rgba(255,255,255,0.8);border-radius: 25px;padding:15px;">
+
+                        <h1 style="text-align:center;font-size:25px">Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling</h1>
+
+                        <h6 style="color:black;">Applications to real pedestrian traces and gate selection problems with Particle Filters</h6>
+                        <hr/>
+                        <h2 style="font-size: 35px;">Patricia Ternes and Nick Malleson</h2>
+                        <hr/>
+                        <p style="text-align:center;font-size:25px">Slides available at: 
+                        	<br/><a href="https://urban-analytics.github.io/dust/presentations.html">https://urban-analytics.github.io/dust/presentations.html</a>
+                        	<br/><a href="https://patricia-ternes.github.io/presentations.html">https://patricia-ternes.github.io/presentations.html</a>
+                        </p>
+
+                        <a href="https://europa.eu/european-union/index_en">
+                            <img style="float:left;padding:10px 50px 10px 50px;width:70px; height:auto;" src="images/LOGO_EU.jpg"/>
+                        </a>
+
+                        <a href="http://www.leeds.ac.uk/">
+                            <img style="float:center;padding:10px;width:150px; height:auto;" src="images/uol_logo.gif"/>
+                        </a>
+
+                        <a href="http://www.turing.ac.uk/">
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="images/LOGO_TURING.png"/>
+                        </a>
+                    </div>
+                </section>
+                
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)" data-background-image="images/rafael-leao-YJ4hqRchpWE-unsplash.jpg">
+                	<div>
+
+                	</div>
+                	 <div style = "position:absolute;left:-150px; top:600px;font-size: 15px;background-color:rgba(255,255,255,0.5);border-radius:25px;padding:10px">
+                		Photo by <a href="https://unsplash.com/@raflfc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rafael Leão</a> on <a href="https://unsplash.com/s/photos/grand-central-station?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>                	
+  					</div>
+
+                </section>
+
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                	<h1 style="font-size:70px;"> StationSim </h1>
+                	<h2 style="font-size:30px;"> Agent-based model </h2>
+              		<div  class="r-hstack justify-center" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div><br/><br/>
+						<div data-id="box2"><img src="images/density-model/02-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+
+					</div>
+					<div>
+  						<ol style="font-size: 20px;">
+  							<li> Try to follow an ideal path (linear) towards the exit point. </li><br/>
+    						<li> If the ideal path is blocked, try to perform a deviation</li><br/>
+    						<li> If both the ideal path and the deviation positions are blocked, stay still until one of them becomes vacant.</li>
+    					</ol>
+  					</div>
+					</div>
+                </section>
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+
+              		<div  class="r-hstack justify-center" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div><br/><br/>
+						<div data-id="box2"><img src="images/density-model/04a-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+
+					</div>
+					<div>
+						<br/><h6 style="font-size: 30px;">Dependence level</h6><br/>
+						<div style="color:black;background-color:rgba(0,153,0,0.3);padding:10px;border-radius:10px;">
+						<h5 style="color:black;font-size: 20px;">Local geographic density</h5>
+						<p style="font-size: 20px;"> $$ \rho_{i,t} = n_{i,t} \frac{r^{2}}{(R^{2} - r^{2})} $$ </p>
+						</div><br/>
+						<ul style="font-size: 20px;">
+							<li> \(n_{i,t}\): number of neighbours agents</li>
+							<li> \(r=0.5\) m </li>
+							<li> \(R=5\) m </li>
+							<li> \(0\le \rho \le 1\)</li>
+						</ul>
+  					</div>
+					</div>
+                </section>
+
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+
+              		<div  class="r-hstack justify-center" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div><br/><br/>
+						<div data-id="box2"><img src="images/density-model/05-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+
+					</div>
+					<div>
+						<div style="color:black;background-color:rgba(0,153,0,0.3);padding:10px;border-radius:10px;">
+						<h5 style="color:black;font-size: 20px;">Agent direction of movement</h5>
+						<p style="font-size: 20px;"> $$ 
+						\theta_{i,t} \sim \mathcal{N}(0, [180^{\circ}\rho_{i,j}]^2)
+						 $$ </p>
+						</div>
+						<ul style="font-size: 20px;">
+							<li> \(\theta_{i,t}\): deviation angle</li>
+						</ul>
+						<br/><br/>
+						
+						<div style="color:black;background-color:rgba(0,153,0,0.3);padding:10px;border-radius:10px;">
+						<h5 style="color:black;font-size: 20px;">Agent speed</h5>
+						<p style="font-size: 20px;"> $$ 
+						v_{i,t} = v_{i,max}(1 - \rho_{i,t})
+						 $$ </p>
+						</div>
+						<ul style="font-size: 20px;">
+							<li> \(v_{i,max}\):  maximum speed</li>
+						</ul>
+  					</div>
+					</div>
+					
+                </section>
+               <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+
+              		<div  class="r-hstack justify-center" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div><br/><br/>
+						<div data-id="box2"><img src="images/density-model/05-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+
+					</div>
+					<div>
+						<div style="color:black;background-color:rgba(0,153,0,0.3);padding:10px;border-radius:10px;">
+						<h5 style="color:black;font-size: 20px;">Agent direction of movement</h5>
+						<p style="font-size: 20px;"> $$ 
+						\theta_{i,t} \sim \mathcal{N}(0, [180^{\circ}\rho_{i,j}]^2)
+						 $$ </p>
+						</div>
+						<ul style="font-size: 20px;">
+							<li> \(\theta_{i,t}\): deviation angle</li>
+						</ul>
+						<br/><br/>
+						
+						<div style="color:black;background-color:rgba(0,153,0,0.3);padding:10px;border-radius:10px;">
+						<h5 style="color:black;font-size: 20px;">Agent speed</h5>
+						<p style="font-size: 20px;"> $$ 
+						v_{i,t} = v_{i,max}(1 - \rho_{i,t})
+						 $$ </p>
+						</div>
+						<ul style="font-size: 20px;">
+							<li> \(v_{i,max}\):  maximum speed</li>
+						</ul>
+  					</div>
+					</div>
+					<div style = "position:absolute;left:45vw; top:20px;margin:10px;width:200px;padding:10px;border-radius:10px;background-color:black;color:white;">
+						<p style="font-size: 20px;">Categorical Parameter</br>
+						<div style="color:red;font-size: 20px;">Exit Gate</div></p>
+					</div>
+					<div style = "position:absolute;left:45vw; top:12.5vw;margin:10px;width:200px;padding:10px;border-radius:10px;background-color:black;color:white;">
+						<p style="font-size: 20px;">Continuous Parameter</br>
+						<div style="color:red;font-size: 20px;">Maximum speed</div></p>
+					</div>
+                </section>
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Pedestrians Trajectories & Model Prediction </h1>
+                	<h2 style="font-size:30px;"> 274 agents + Initial conditions + speed + exit gate </h2></br>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<ul style="font-size: 20px;">
+							<li> Solid lines: pedestrians</li>
+							<li> Dashed lines: agents</li>
+						</ul>
+						<p> </p>
+						<div><img src="images/density-model/results/1a.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+						<ul style="font-size: 20px;">
+							<li> Correct: RSME \(\le\) 4.25 m</li>
+							<li> Good: 4.25 m \(<\) RSME \(\le\)  8.50 m</li>
+							<li> Poor: RSME > 8.50 m</li>
+						</ul>
+						<div><img src="images/density-model/results/1b.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Model Prediction & Unknown Parameters</h1>
+                	<h2 style="font-size:30px;"> 274 agents + Initial conditions + <s style="color:lightgrey">speed + exit gate</s> </h2>
+              		<ul style="font-size: 20px;">
+						<li> Speed from \(\mathcal{N}(1.6\hbox{~m/s},(0.6\hbox{~m/s})^2)\)</li>
+						<li> Exit Gate from  
+							\(P(g_{out}~|~g_{in}) = \left\{ \begin{array}{ccl}
+		                                         0 & \text{if} & g_{out} \text{ and } g_{in} \text{ are on the same side}, \\
+		                                         \frac{1}{G-G_{in}} & \text{if} & g_{out}\text{ and } g_{in} \text{ are on different sides} \end{array}\right.\)</li>
+						</ul>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<p> </p>
+						<div><img src="images/density-model/results/2a.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+						<div><img src="images/density-model/results/2b.png" style="margin: 2 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Particle Filter</h1>
+                	<h2 style="font-size:30px;"> Sequential Importance Resampling </h2>
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, data assimilation window of 25 frames.</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
+						<li> 274 pedestrians </li>
+					</ul>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<p> </p>
+						<div><img src="images/density-model/results/3a.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+						<div><img src="images/density-model/results/3b.png" style="margin: 2 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
+                	
+ 					<div><img src="images/density-model/CCPF-Flowchart.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical Noise Step</h1>
+                	<h2 style="font-size:30px;"> try to perturb the categorical unknown parameters </h2>
+                	</br></br>
+                	<div>
+					<ol style="font-size: 20px;">
+						<li> the agent \(i\) has a <span style="background-color:lightgrey">probability \( P_c \)</span> of having its categorical parameter \(j\) redefined 
+							<ul><li>Redrawn probability: \( P_c \)</li></ul></br>
+						</li>
+						<li> the categorical parameter \(j\) is redefined according a <span style="background-color:lightgrey">transition matrix \(T_j\)</span> </li></br>
+						<li> each categorical parameter has a specific transition matrix </li></br>
+						<li> the categorical noise step must be applied to all \(n\times N\) agents after the update step every <span style="background-color:lightgrey">\(W_c = \tau\times W_d\) </span> time steps. 
+							<ul><li>Redrawn window: \(W_c\)</li>
+								<li>Data assimilation window: \(W_d\)</li></ul>
+						</li>
+					</ol>
+					</div>
+                </section>
+
+                <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Transition Matrix</h1>
+                	<h2 style="font-size:30px;"> StationSim + Grand Central Terminal</h2>
+<p style="font-size:20px"> $$p(\text{ID}'~|~\text{ID}) = \left\{ \begin{array}{ccl}
+0.4  & \text{for} & \text{ID}' = \text{ID}, \\ 
+0.25 & \text{for} & \text{ID}' = \text{ID} \pm 1, \\ 
+0.05 & \text{for} & \text{ID}' = \text{ID} \pm 2, \\
+\end{array}\right.$$ </p> </br>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<div style="font-size:20px;"><img src="images/density-model/02-gct-environment.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo">
+						</div>
+					</div>
+					<div style="font-size:20px;">
+						
+<p></p><span style="font-size:14px;">
+$$T = \left[ \begin{array}{ccccccccccc}
+0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25\\
+0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05\\
+0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25 & 0.05\\
+0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4 & 0.25\\
+0.25 & 0.05 & 0 & 0 & 0 & 0 & 0 & 0 & 0.05 & 0.25 & 0.4\\
+\end{array}\right]$$</span>
+
+
+					</div>
+                </section>
+				<section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
+                	<!--<h2 style="font-size:30px;"> Sequential Importance Resampling </h2>-->
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, DA window of 25 frames, Redrawn window of 100 frames.</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
+					</ul>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+						<p> </p>
+						<div><img src="images/density-model/results/4a.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+						<div><img src="images/density-model/results/4b.png" style="margin: 2 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+				<section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;"> Categorical-Continuous Particle Filter</h1>
+              		<ul style="font-size: 20px;">
+						<li> One agent per simulation, 100 particles, DA window of 25 frames</li>
+						<li> \(\rho_{i,t}\) randomly drawn from an exponential distribution with rate parameter of 25.3</li>
+						<li> 274 pedestrians, 5 runs, 11 redrawn probabilities, 5 redrawn windows;</li>
+					</ul></br></br>
+
+					<img src="images/density-model/results/5a.png" style="background:transparent;width:auto">
+					<!--<img src="images/density-model/results/5b.png" style="background:transparent;width:60%">-->
+
+                </section>
+
+                 <section class="r-hstack justify-center">
+                	<h1 style="font-size:70px;">CCPF \(\times \) SIR-PF \(\times \) Model prediction</h1>
+              		<div  style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 50px;text-align:left;">
+					<div>
+              		<ul style="font-size: 20px;">
+						<li> Data Assimilation - One agent per simulation</li>
+					</ul>
+						<div><img src="images/density-model/results/6.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+					</div>
+					<div>
+              		<ul style="font-size: 20px;">
+						<li> Model prediction (unrealistic scenario) </li>
+					</ul>
+						<div><img src="images/density-model/results/1b.png" style="margin: 0 auto 4rem auto; background:transparent;" class="demo-logo"></div>
+  					</div>
+					</div>
+                </section>
+
+
+<section data-background-image="images/rafael-leao-YJ4hqRchpWE-unsplash.jpg">
+                    <div style="background-color:rgba(255,255,255,0.8);border-radius: 25px;padding:15px;">
+
+                        <h1 style="text-align:center;font-size:25px">Towards real-time numerical simulations of human-environment systems: data assimilation & agent-based modelling</h1>
+
+                        <h6 style="color:black;">Applications to real pedestrian traces and gate selection problems with Particle Filters</h6>
+                        <hr/>
+                        <h2 style="font-size: 35px;">Patricia Ternes and Nick Malleson</h2>
+                        <hr/>
+                        <p style="text-align:center;font-size:25px">Slides available at: 
+                        	<br/><a href="https://urban-analytics.github.io/dust/presentations.html">https://urban-analytics.github.io/dust/presentations.html</a>
+                        	<br/><a href="https://patricia-ternes.github.io/presentations.html">https://patricia-ternes.github.io/presentations.html</a>
+                        </p>
+
+                        <a href="https://europa.eu/european-union/index_en">
+                            <img style="float:left;padding:10px 50px 10px 50px;width:70px; height:auto;" src="images/LOGO_EU.jpg"/>
+                        </a>
+
+                        <a href="http://www.leeds.ac.uk/">
+                            <img style="float:center;padding:10px;width:150px; height:auto;" src="images/uol_logo.gif"/>
+                        </a>
+
+                        <a href="http://www.turing.ac.uk/">
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="images/LOGO_TURING.png"/>
+                        </a>
+                    </div>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal/dist/reveal.js"></script>
+		<script src="reveal/plugin/zoom/zoom.js"></script>
+		<script src="reveal/plugin/notes/notes.js"></script>
+		<script src="reveal/plugin/search/search.js"></script>
+		<script src="reveal/plugin/markdown/markdown.js"></script>
+		<script src="reveal/plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
