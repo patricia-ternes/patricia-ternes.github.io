@@ -30,6 +30,9 @@
 
 	<script src="{{ url }}/assets/js/modernizr.min.js"></script>
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<script src="https://kit.fontawesome.com/bf476d6df0.js" crossorigin="anonymous"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
 	<script>
 		WebFont.load({
@@ -90,14 +93,11 @@
 	{% endunless %}
 
 	{% if site.google_analytics_tracking_id %}
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_tracking_id }}"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', '{{ site.google_analytics_tracking_id }}');
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', '{{ site.analytics.google.tracking_id }}', 'auto');
+	ga('send', 'pageview');
 	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
 	{% endif %}
 

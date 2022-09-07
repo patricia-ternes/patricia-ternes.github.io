@@ -23,7 +23,9 @@ Check typography variables › _3_typography_settings.scss
 
 /* Links
 ------------------------------------------------------------------- */
-
+a{
+    text-decoration: none;
+}
 a,
 a:link {
     transition: all .4s;
@@ -62,7 +64,7 @@ p {
 p a,
 article a {
     font-weight: bold;
-    border-bottom: 1px dotted;
+    //border-bottom: 1px dotted;
 }
 p a:hover,
 article a:hover {
@@ -73,6 +75,7 @@ p a.button,
 .button:hover {
     border: 0;
     color: #fff;
+    font-weight: bold;
 }
 p.button a {
     border: 0;
@@ -90,8 +93,9 @@ p.button a {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
-    font-weight: normal;
+    font-weight: bold;
     padding: 0;
+    color: $ci-1;
 }
 h1 {
     font-size: $font-size-h1;
@@ -352,9 +356,6 @@ mark {
     font-size: inherit;
     margin-bottom: 0;
 }
-
-
-
 
 /* Icon Font
    See the icon-set/preview in /assets/fonts/iconfont-preview.html

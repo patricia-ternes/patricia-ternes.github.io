@@ -3,7 +3,7 @@ layout: default
 format: page-fullwidth
 ---
 {% if page.image.title %}
-<div class="row t30">
+<div class="page-row  t30">
 	<div class="small-12 columns">
 		<img src="{{ site.urlimg }}{{ page.image.title }}" width="970" alt="{{ page.title | escape_once }}">
 		{% if page.image.caption_url and page.image.caption %}
@@ -16,7 +16,7 @@ format: page-fullwidth
 {% endif %}
 
 
-<div class="row t30">
+<div class="page-row  t30">
 	<div class="medium-12 columns">
 		<article>
 			<header>
@@ -34,5 +34,3 @@ format: page-fullwidth
 		</article>
 	</div><!-- /.medium-12.columns -->
 </div><!-- /.row -->
-
-

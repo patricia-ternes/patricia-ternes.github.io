@@ -94,3 +94,9 @@ font_design_size: 20
 
 # Horizontally fit glyphs to their individual vector widths.
 #autowidth: false
+
+# =============================================================================
+# Font Custom Configuration
+#   This file should live in the directory where you run `fontcustom compile`.
+#   For more info, visit <https://github.com/FontCustom/fontcustom>.
+# =============================================================================
