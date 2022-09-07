@@ -201,3 +201,23 @@ img.lazy {
   margin-left: -1.3em; /* same as padding-left set on li */
   width: 1.3em; /* same as padding-left set on li */
 }
+
+/* Presentation list style */
+.presentation {
+  margin-left: 50px
+}
+
+.presentation li {
+  padding-left: 1.3em;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.presentation li:before {
+  content: "\f27a";   /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  color: $ci-1;
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+}
