@@ -1,0 +1,64 @@
+- subject: "Scientific Computing with Python"
+  provider: "freeCodeCamp.org"
+  year: "2022"
+
+- subject: "Fundamentals of Accelerated Computing with CUDA Python"
+  provider: "NVIDIA DLI"
+  year: "2022"
+
+- subject: "Time Series Forecasting with Python"
+  provider: "AI+ TRAINING"
+  year: "2021"
+
+- subject: "SWD6: High Performance Python"
+  provider: "IT Training, University of Leeds"
+  year: "2021"
+
+- subject: "SWD2: Version Control with Git / Github"
+  provider: "IT Training, University of Leeds"
+  year: "2021"
+
+- subject: "HPC1: HPC Carpentry"
+  provider: "IT Training, University of Leeds"
+  year: "2020"
+
+- subject: "Java Programming: Solving Problems with Software"
+  provider: "Duke University"
+  year: "2020"
+
+- subject: "Java Basic Programming I, II & III"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2020"
+
+- subject: "Administrative Law"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2019"
+
+- subject: "Administration Fundamentals"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2019"
+
+- subject: "Creating Educational Videos"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2019"
+
+- subject: "Public Service Ethics"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2019"
+
+- subject: "Personalizing Teaching through Active Methodologies"
+  provider: "Federal Institute of Rio Grande do Sul"
+  year: "2019"
+
+- subject: "Use of technologies to support teaching"
+  provider: "Federal Institute Catarinense"
+  year: "2018"
+
+- subject: "Programming in CUDA"
+  provider: "Federal University of Rio Grande do Sul"
+  year: "2015"
+
+- subject: "Initial Training of Tutors for distance education"
+  provider: "Federal University of Santa Catarina"
+  year: "2011"
+

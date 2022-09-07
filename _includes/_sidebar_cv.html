@@ -1,0 +1,106 @@
+<aside>
+	<div class="panel radius">
+
+		<!-- Contact detail -->
+		<h4>Contact detail</h4>
+		Leeds Institute for Data Analytics <br>
+		Level 11, Worsley Building <br>
+		Clarendon Way <br>
+		Leeds, UK <br>
+		p.ternesdallagnollo@leeds.ac.uk <br>
+
+		<!-- Useful links -->
+		<h4 class="t60">Useful links</h4>
+		<ul>
+			<li><a href="https://arc.leeds.ac.uk/">Research Computing Homepage</a></li>
+			<li><a href="https://www.linkedin.com/in/patricia-ternes/">LinkedIn</a></li>
+			<li><a href="https://orcid.org/0000-0002-3116-3692">ORCID</a></li>
+			<li><a href="https://www.researchgate.net/profile/Patricia_Ternes">ResearchGate</a></li>
+			<li><a href="http://lattes.cnpq.br/9063755717694210">Lattes</a></li>
+			<li><a href="https://github.com/patricia-ternes">GitHub</a></li>
+
+		</ul>
+
+		<!-- Technical Skills -->
+		<h4 class="t60">Technical Skills</h4>
+
+		<!-- Languages -->
+		<h5 class="t50 b15 l15">Languages</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "language" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<!-- Communication, Collaboration and Management -->
+		<h5 class="t50 b15 l15">Communication, Collaboration and Management</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "collaboration" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+
+		<!-- Programming Languages -->
+		<h5 class="t50 b15 l15">Programming Languages</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "programming" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<!-- Image & Video Editor -->
+		<h5 class="t50 b15 l15">Image & Video Editor</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "graphics" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<!-- Computer Simulation Methods -->
+		<h5 class="t50 b15 l15">Computer Simulation Methods</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "computational" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<!-- Science Software -->
+		<h5 class="t50 b15 l15">Science Software</h5>
+		<div class="l30">
+			{% for item in site.data.skills %}
+			{% if item.class == "software" %}
+			{{ item.title }}
+			<div class="bar-container">
+				<div class="bar-{{ item.rating }}"></div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</aside>
