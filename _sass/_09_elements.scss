@@ -221,3 +221,32 @@ img.lazy {
   margin-left: -1.3em;
   width: 1.3em;
 }
+
+/* Fancy table style from https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy*/
+#fancytable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#fancytable td,
+#fancytable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#fancytable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#fancytable tr:hover {
+  background-color: #ddd;
+}
+
+#fancytable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #8eb3b2;
+  color: white;
+}
