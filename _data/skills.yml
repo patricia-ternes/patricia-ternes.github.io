@@ -1,0 +1,137 @@
+- class: "language"
+  title: "Portuguese"
+  rating: "5"
+
+- class: "language"
+  title: "English"
+  rating: "4"
+
+- class: "language"
+  title: "Spanish"
+  rating: "3"
+
+# <!-- Communication, Collaboration and Management -->
+- class: "collaboration"
+  title: "GitHub"
+  rating: "5"
+
+- class: "collaboration"
+  title: "Trello"
+  rating: "5"
+
+- class: "collaboration"
+  title: "Slack"
+  rating: "5"
+
+- class: "collaboration"
+  title: "Zoom"
+  rating: "5"
+
+- class: "collaboration"
+  title: "Teams"
+  rating: "4"
+
+- class: "collaboration"
+  title: "Meet"
+  rating: "3"
+
+
+# <!-- Programming Languages -->
+- class: "programming"
+  title: "Python"
+  rating: "5"
+
+- class: "programming"
+  title: "Fortran"
+  rating: "5"
+
+- class: "programming"
+  title: "LaTeX"
+  rating: "5"
+
+- class: "programming"
+  title: "Markdown"
+  rating: "5"
+
+- class: "programming"
+  title: "HTML"
+  rating: "4"
+
+- class: "programming"
+  title: "Java"
+  rating: "3"
+
+- class: "programming"
+  title: "Bash"
+  rating: "3"
+
+- class: "programming"
+  title: "R"
+  rating: "1"
+
+- class: "programming"
+  title: "MATLAB"
+  rating: "1"
+
+# <!-- Image & Video Editor -->
+- class: "graphics"
+  title: "GIMP"
+  rating: "4"
+
+- class: "graphics"
+  title: "OBS"
+  rating: "3"
+
+- class: "graphics"
+  title: "Camtasia Studio"
+  rating: "2"
+
+- class: "graphics"
+  title: "Blender"
+  rating: "1"
+
+# <!-- Computer Simulation Methods -->
+- class: "computational"
+  title: "Molecular Dynamics"
+  rating: "5"
+
+- class: "computational"
+  title: "Monte Carlo"
+  rating: "4"
+
+- class: "computational"
+  title: "Agent Based Modelling"
+  rating: "4"
+
+- class: "computational"
+  title: "Microsimulation"
+  rating: "2"
+
+# <!-- Science Software -->
+- class: "software"
+  title: "Xmgrace"
+  rating: "4"
+
+- class: "software"
+  title: "LAMMPS"
+  rating: "4"
+
+- class: "software"
+  title: "VMD"
+  rating: "3"
+
+- class: "software"
+  title: "Fityk"
+  rating: "3"
+
+- class: "software"
+  title: "Wolfram Mathematica"
+  rating: "2"
+
+- class: "software"
+  title: "ArcGIS"
+  rating: "1"
+
+- class: "software"
+  title: "QGIS"
+  rating: "1"

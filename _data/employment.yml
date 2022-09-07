@@ -1,0 +1,44 @@
+- job: "Research Software Engineer"
+  employer: "University of Leeds, UK"
+  start: "Jan 2022"
+  end: "Ongoing"
+
+- job: "Researcher in Simulating Urban Systems"
+  employer: "University of Leeds, UK"
+  start: "Nov 2019"
+  end: "Jan 2022"
+
+- job: "Substitute Professor of Physics"
+  employer: "Federal Institute Catarinense, Brazil"
+  start: "Mar 2018"
+  end: "Oct 2019"
+
+- job: "CNPq-funded doctoral student"
+  employer: "Federal University of Rio Grande do Sul, Brazil"
+  start: "Aug 2014"
+  end: "June 2018"
+
+- job: "CNPq-funded masters student"
+  employer: "Federal University of Santa Catarina"
+  start: "Aug 2012"
+  end: "July 2014"
+
+- job: "Intern in Inclusive Education"
+  employer: "Laboratory School, Federal University of Santa Catarina"
+  start: "Aug 2011"
+  end: "June 2012"
+
+- job: "Intern"
+  employer: "Science Room, Social Service of Commerce (SESC)"
+  start: "Mar 2010"
+  end: "Dec 2010"
+
+- job: "Intern"
+  employer: "Science Park, Federal University of Santa Catarina"
+  start: "Mar 2009"
+  end: "Dec 2009"
+
+- job: "Undergraduate student"
+  employer: "Federal University of Santa Catarina"
+  start: "Mar 2007"
+  end: "Mar 2012"

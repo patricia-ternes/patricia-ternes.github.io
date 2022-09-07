@@ -1,0 +1,44 @@
+---
+layout: default
+format: curriculum
+---
+{% if page.image.title %}
+<div class="row t30">
+	<div class="small-12 columns">
+		<img src="{{ site.urlimg }}{{ page.image.title }}" width="970" alt="{{ page.title | escape_once }}">
+		{% if page.image.caption_url and page.image.caption %}
+		<p class="text-right caption">
+			<a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a>
+		</p>
+		{% endif %}
+	</div>
+</div>
+{% endif %}
+
+
+<div class="page-row  t30">
+	<div class="medium-12 columns">
+		<article>
+			<header>
+				{% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+				<!-- <h1 class="l30">{{ page.title }}</h1> -->
+			</header>
+
+			{% if page.teaser %}
+			<p class="teaser">
+				{{ page.teaser }}
+			</p>
+			{% endif %}
+
+			<div class="page-row">
+				<div class="medium-9 columns">
+					<h1 class="t20 b60">{{ page.title }}</h1>
+					{{ content }}
+				</div>
+				<div class="medium-3 columns t80">
+					{% include _sidebar_cv.html %}
+				</div>
+			</div>
+		</article>
+	</div>
+</div>
