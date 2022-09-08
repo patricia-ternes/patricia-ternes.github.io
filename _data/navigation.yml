@@ -14,7 +14,7 @@
   url: "/teaching/"
   side: left
 
-- title: "CV & Contact"
+- title: "CV"
   url: "/cv/"
   side: left
 
@@ -29,6 +29,6 @@
 #   url: "/search/"
 #   side: right
 
-# - title: "Contact"
-#   url: "/contact/"
-#   side: right
+- title: "Contact"
+  url: "/contact/"
+  side: right
